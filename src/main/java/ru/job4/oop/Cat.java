@@ -16,6 +16,7 @@ public class Cat {
     public void giveNick(String nick) {
         this.name = nick;
     }
+
     public static void main(String[] args) {
         Cat gav = new Cat();
         gav.giveNick("Gav");
