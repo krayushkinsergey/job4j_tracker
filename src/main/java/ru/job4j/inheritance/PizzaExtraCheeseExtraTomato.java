@@ -1,7 +1,7 @@
 package ru.job4j.inheritance;
 
-public class PizzaExtraCheeseExtraTomato {
+public class PizzaExtraCheeseExtraTomato extends PizzaExtraCheese {
     public String name() {
-        return "Just tasty pizza + " + " Extra Cheese + " + " ExtraTomato";
+        return super.name() + " + ExtraTomato";
     }
 }
