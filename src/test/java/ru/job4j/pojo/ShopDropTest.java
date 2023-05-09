@@ -53,4 +53,21 @@ class ShopDropTest {
         assertThat(rsl[3].getName()).isEqualTo("Fruit");
         assertThat(rsl[products.length - 1]).isNull();
     }
+
+    @Test
+    public void whenArrayLengthIs5AndDeleteElementWithIndex1andIndex3() {
+        Product[] products = new Product[5];
+        products[0] = new Product("Bread", 4);
+        products[1] = new Product("Egg", 10);
+        products[2] = new Product("Milk", 2);
+        products[3] = new Product("Fish", 3);
+        products[4] = new Product("Fruit", 8);
+        Product[] rsl = ShopDrop.delete(products, 1);
+        rsl = ShopDrop.delete(products, 3);
+        assertThat(rsl[0].getName()).isEqualTo("Bread");
+        assertThat(rsl[1].getName()).isEqualTo("Milk");
+        assertThat(rsl[2].getName()).isEqualTo("Fish");
+        assertThat(rsl[3]).isNull();
+        assertThat(rsl[4]).isNull();
+    }
 }
