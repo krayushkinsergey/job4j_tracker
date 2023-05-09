@@ -35,11 +35,10 @@ public class Library {
 
     private static void outBooks(Book[] books, String filter) {
         for (int i = 0; i < books.length; i++) {
-            if (filter != null && !books[i].getName().equals(filter)) {
-                continue;
+            if (filter == null || books[i].getName().equals(filter)) {
+                System.out.println("Книга \"" + books[i].getName() + "\""
+                        + ", количество страниц " + books[i].getNumberPages() + ".");
             }
-            System.out.println("Книга \"" + books[i].getName() + "\""
-                                + ", количество страниц " + books[i].getNumberPages() + ".");
         }
     }
 }
