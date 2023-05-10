@@ -15,12 +15,12 @@ public class Library {
         Book cleanCode = new Book("Clean code", 933);
         books[3] = cleanCode;
 
-        outBooks(books, null);
+        outBooks(books);
         System.out.println();
 
         System.out.println("Меняем местами первую и чпетвертую книгу");
         swapBooks(books, 1, 4);
-        outBooks(books, null);
+        outBooks(books);
         System.out.println();
 
         System.out.println("выводом книг с именем \"Clean code\"");
@@ -33,11 +33,21 @@ public class Library {
         books[second - 1] = tmp;
     }
 
+    private static void outBook(Book book) {
+        System.out.println("Книга \"" + book.getName() + "\""
+                + ", количество страниц " + book.getNumberPages() + ".");
+    }
+
+    private static void outBooks(Book[] books) {
+        for (int i = 0; i < books.length; i++) {
+            outBook(books[i]);
+        }
+    }
+
     private static void outBooks(Book[] books, String filter) {
         for (int i = 0; i < books.length; i++) {
-            if (filter == null || books[i].getName().equals(filter)) {
-                System.out.println("Книга \"" + books[i].getName() + "\""
-                        + ", количество страниц " + books[i].getNumberPages() + ".");
+            if (filter.equals(books[i].getName())) {
+                outBook(books[i]);
             }
         }
     }
