@@ -9,16 +9,11 @@ public class MagicBall {
         Scanner input = new Scanner(System.in);
         String question = input.nextLine();
         int answer = new Random().nextInt(3);
-        switch (answer) {
-            case 0:
-                System.out.println("Да");
-                break;
-            case 1:
-                System.out.println("Нет");
-                break;
-            default:
-                System.out.println("Может быть");
-                break;
-        }
+        String answerText = switch (answer) {
+            case 0 -> "Да";
+            case 1 -> "Нет";
+            default -> "Может быть";
+        };
+        System.out.println(answerText);
     }
 }
