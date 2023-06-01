@@ -4,7 +4,7 @@ public class Airplane implements Vehicle {
     public static final String TYPE = "Самолет";
     private String model;
 
-    Airplane(String model) {
+    public Airplane(String model) {
         this.model = model;
     }
 
