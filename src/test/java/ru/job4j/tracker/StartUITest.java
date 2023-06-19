@@ -6,12 +6,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 class StartUITest {
     @Test
     public void whenCreateItem() {
+        Output out = new ConsoleOutput();
         Input in = new StubInput(
                 new String[] {"0", "Item name", "1"}
         );
         Tracker tracker = new Tracker();
         UserAction[] actions = {
-                new CreateAction(),
+                new CreateAction(out),
                 new ExitAction()
         };
         new StartUI().init(in, tracker, actions);
@@ -26,8 +27,9 @@ class StartUITest {
         Input in = new StubInput(
                 new String[] {"0", "1", replacedName, "1"}
         );
+        Output out = new ConsoleOutput();
         UserAction[] actions = {
-                new EditAction(),
+                new EditAction(out),
                 new ExitAction()
         };
         new StartUI().init(in, tracker, actions);
@@ -41,8 +43,9 @@ class StartUITest {
         Input in = new StubInput(
                 new String[] {"0", "1", "1"}
         );
+        Output out = new ConsoleOutput();
         UserAction[] actions = {
-                new DeleteAction(),
+                new DeleteAction(out),
                 new ExitAction()
         };
         new StartUI().init(in, tracker, actions);
