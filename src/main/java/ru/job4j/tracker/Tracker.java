@@ -29,7 +29,7 @@ public class Tracker {
                 findItems.add(item);
             }
         }
-        return  findItems;
+        return List.copyOf(findItems);
     }
 
     private int indexOf(int id) {
