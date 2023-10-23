@@ -19,7 +19,7 @@ public class Tracker {
     }
 
     public List<Item> findAll() {
-        return items;
+        return List.copyOf(items);
     }
 
     public List<Item> findByName(String key) {
@@ -29,7 +29,7 @@ public class Tracker {
                 findItems.add(item);
             }
         }
-        return List.copyOf(findItems);
+        return findItems;
     }
 
     private int indexOf(int id) {
