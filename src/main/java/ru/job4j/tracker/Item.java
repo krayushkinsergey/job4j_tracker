@@ -59,7 +59,13 @@ public class Item {
 
     @Override
     public boolean equals(Object obj) {
-        Item other = (Item) obj;
-        return id == other.getId();
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Item item = (Item) o;
+        return Objects.equals(id, item.id);
     }
 }
