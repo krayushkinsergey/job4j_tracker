@@ -59,13 +59,13 @@ public class Item {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == o) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Item item = (Item) o;
+        Item item = (Item) obj;
         return Objects.equals(id, item.id);
     }
 }
