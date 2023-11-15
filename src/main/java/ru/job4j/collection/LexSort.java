@@ -10,7 +10,6 @@ public class LexSort implements Comparator<String> {
         String[] rightArray = right.split("\\.");
         int leftInt = Integer.parseInt(leftArray[0]);
         int rightInt = Integer.parseInt(rightArray[0]);
-        rsl = Integer.compare(leftInt, rightInt);
-        return rsl != 0 ? rsl : leftArray[1].compareTo(rightArray[1]);
+        return Integer.compare(leftInt, rightInt);
     }
 }

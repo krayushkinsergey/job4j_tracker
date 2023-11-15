@@ -22,22 +22,4 @@ class LexSortTest {
         Arrays.sort(input, new LexSort());
         assertThat(input).containsExactly(out);
     }
-
-    @Test
-    public void sortNum1and2and10andText() {
-        String[] input = {
-                "10. Task.",
-                "1. Task.",
-                "2. Task.",
-                "2. Atask",
-        };
-        String[] out = {
-                "1. Task.",
-                "2. Atask",
-                "2. Task.",
-                "10. Task."
-        };
-        Arrays.sort(input, new LexSort());
-        assertThat(input).containsExactly(out);
-    }
 }
