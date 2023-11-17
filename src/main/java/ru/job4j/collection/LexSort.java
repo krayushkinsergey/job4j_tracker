@@ -5,7 +5,6 @@ import java.util.Comparator;
 public class LexSort implements Comparator<String> {
     @Override
     public int compare(String left, String right) {
-        int rsl = 0;
         String[] leftArray = left.split("\\.");
         String[] rightArray = right.split("\\.");
         int leftInt = Integer.parseInt(leftArray[0]);
